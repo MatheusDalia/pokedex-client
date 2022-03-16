@@ -13,11 +13,6 @@ For the development, I used Node.js, Express.js, Typescript and PostgreSQL
 git clone https://github.com/MatheusDalia/teste-desenvolvimento-web.git
 ```
 
-**Server setup:**
-
-Go to https://github.com/MatheusDalia/pokedex-server.git and follow the instructions.
-
-
 **Client setup:**
 
 1. In the client folder, install all the dependencies by running
@@ -34,6 +29,12 @@ npm dev
 ```
 3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+**Server setup:**
+
+Go to https://github.com/MatheusDalia/pokedex-server.git and follow the instructions.
+
+
 ## Development team
 
 - **Matheus Dalia** - *Front-end/Back-end developer* - [MatheusDalia](https://github.com/MatheusDalia)
+
