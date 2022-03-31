@@ -10,7 +10,7 @@ import Stack from '@mui/material/Stack';
 import theme from '../../styles/theme';
 import { Center } from './style';
 import { useAxios } from 'utils/useAxios';
-import { api } from '../../services/api';
+import api from '../../services/api';
 import { useState, useEffect } from 'react';
 import { Toast } from 'components';
 import Box from '@mui/material/Box';
