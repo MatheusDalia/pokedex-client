@@ -284,7 +284,7 @@ export default function MediaCard({ pokemon }) {
             </Stack>
           </Center>
         </CardContent>
-        <CardActions display="center">
+        <CardActions>
           <InfoButton onClick={handleOpen}>Info</InfoButton>
           <DeleteButton onClick={onDelete} size="medium">
             Delete
