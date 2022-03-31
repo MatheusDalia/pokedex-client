@@ -71,7 +71,6 @@ export default function MediaCard({ pokemon }) {
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             <FormInputs>
               <Input
-                onChange={(event) => setName(event.target.value)}
                 id="outlined-number"
                 label="Nome"
                 defaultValue={pokemon.name}
@@ -87,7 +86,6 @@ export default function MediaCard({ pokemon }) {
                 spacing={2}
               >
                 <Input
-                  onChange={(event) => setType1(event.target.value)}
                   id="outlined-number"
                   label="Type 1"
                   defaultValue={pokemon.type1}
@@ -96,7 +94,6 @@ export default function MediaCard({ pokemon }) {
                   }}
                 />
                 <Input
-                  onChange={(event) => setType2(event.target.value)}
                   id="outlined-number"
                   label="Type 2"
                   defaultValue={pokemon.type2}
@@ -121,7 +118,6 @@ export default function MediaCard({ pokemon }) {
                 spacing={2}
               >
                 <Input
-                  onChange={(event) => setWeather1(event.target.value)}
                   id="outlined-number"
                   label="Weather 1"
                   defaultValue={pokemon.weather1}
@@ -130,7 +126,6 @@ export default function MediaCard({ pokemon }) {
                   }}
                 />
                 <Input
-                  onChange={(event) => setWeather2(event.target.value)}
                   id="outlined-number"
                   label="Weather 2"
                   defaultValue={pokemon.weather2}
