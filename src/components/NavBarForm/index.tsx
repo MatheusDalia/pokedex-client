@@ -86,7 +86,7 @@ export default function SearchAppBar() {
             {' '}
             <Button onClick={homeLink}>
               <Image
-                marginRight="2rem"
+                // marginRight="2rem"
                 src={logo}
                 width="100px"
                 alt="nav-bar=logo"
