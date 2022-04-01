@@ -40,7 +40,6 @@ export const CustomText = styled.p<TextProps>`
   color: ${(props) =>
     ({ theme }) =>
       (props.black && theme.colors.black) ||
-      (props.lightBlue && theme.colors.lightBlue) ||
       (props.white && theme.colors.white) ||
       (props.green && theme.colors.green) ||
       theme.colors.green};

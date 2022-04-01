@@ -7,21 +7,14 @@ import Typography from '@mui/material/Typography';
 import { ChipFinal } from 'components/ChipStyle';
 import { InfoButton, DeleteButton } from 'components/Button';
 import Stack from '@mui/material/Stack';
-import theme from '../../styles/theme';
 import { Center } from './style';
 import { useAxios } from 'utils/useAxios';
-import { api } from '../../services/api';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Toast } from 'components';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import { FormInputs } from './style';
 import { Input } from 'components';
-import FormControl from '@mui/material/FormControl';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import { Checkbox } from '@mui/material';
 
 const style = {
   position: 'absolute' as const,
@@ -29,7 +22,6 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 800,
-  // height: 700,
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
@@ -71,7 +63,6 @@ export default function MediaCard({ pokemon }) {
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             <FormInputs>
               <Input
-                onChange={(event) => setName(event.target.value)}
                 id="outlined-number"
                 label="Nome"
                 defaultValue={pokemon.name}
@@ -87,7 +78,6 @@ export default function MediaCard({ pokemon }) {
                 spacing={2}
               >
                 <Input
-                  onChange={(event) => setType1(event.target.value)}
                   id="outlined-number"
                   label="Type 1"
                   defaultValue={pokemon.type1}
@@ -96,7 +86,6 @@ export default function MediaCard({ pokemon }) {
                   }}
                 />
                 <Input
-                  onChange={(event) => setType2(event.target.value)}
                   id="outlined-number"
                   label="Type 2"
                   defaultValue={pokemon.type2}
@@ -121,7 +110,6 @@ export default function MediaCard({ pokemon }) {
                 spacing={2}
               >
                 <Input
-                  onChange={(event) => setWeather1(event.target.value)}
                   id="outlined-number"
                   label="Weather 1"
                   defaultValue={pokemon.weather1}
@@ -130,7 +118,6 @@ export default function MediaCard({ pokemon }) {
                   }}
                 />
                 <Input
-                  onChange={(event) => setWeather2(event.target.value)}
                   id="outlined-number"
                   label="Weather 2"
                   defaultValue={pokemon.weather2}
@@ -289,7 +276,7 @@ export default function MediaCard({ pokemon }) {
             </Stack>
           </Center>
         </CardContent>
-        <CardActions display="center">
+        <CardActions>
           <InfoButton onClick={handleOpen}>Info</InfoButton>
           <DeleteButton onClick={onDelete} size="medium">
             Delete

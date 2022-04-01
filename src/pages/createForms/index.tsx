@@ -1,28 +1,25 @@
 import { CustomText } from '../../styles/globalComponents';
 import { RedButton, Input, Toast } from 'components';
 import { Pokedex } from '../../assets';
-import FormLabel from '@mui/material/FormLabel';
+
 import NavBarForm from 'components/NavBarForm';
-import PropTypes from 'prop-types';
+
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import { Checkbox } from '@mui/material';
-import theme from '../../styles/theme';
 
-import { GodContainer, Container, Content, FormInputs } from './style';
+import { GodContainer, Container, Content, FormInputs } from '../../components/styleForm';
 import Image from 'next/image';
 
-import { useSession, signIn } from 'next-auth/react';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useAxios } from 'utils/useAxios';
-import crypto from 'crypto';
+import { AxiosError, AxiosResponse } from 'axios';
 
-export default function Login() {
-  const { data: session, status } = useSession();
+export default function CreateForms() {
   const [name, setName] = useState('');
   const [type1, setType1] = useState('');
   const [type2, setType2] = useState('""');
@@ -180,10 +177,7 @@ export default function Login() {
     }
   };
 
-  const loginClick = (e) => {
-    e.preventDefault();
-    router.push('/');
-  };
+
 
   const sendPokemon = async () => {
     await axiosPost({
@@ -288,7 +282,9 @@ export default function Login() {
                 }}
               />
               <Input
-                onChange={(event) => setPokemonNumber(event.target.value)}
+                onChange={(event) =>
+                  setPokemonNumber(Number(event.target.value))
+                }
                 required
                 id="outlined-number"
                 label="Pokemon N°"

@@ -1,5 +1,5 @@
 {
-  "name": "citiplus",
+  "name": "pokemon",
   "private": true,
   "scripts": {
     "dev": "next dev",

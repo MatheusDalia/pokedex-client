@@ -1,13 +1,12 @@
 import { CustomText } from '../styles/globalComponents';
-import { Input, Toast } from 'components';
+import { RedButton, Input, Toast } from 'components';
 import NavBar from 'components/NavBar';
-import { Logo, Google, GitHub } from '../assets';
 import Card from 'components/Card';
 import CardGrid from 'components/CardGrid';
 import PaginationButtons from 'components/Pagination';
 import { useAxios } from 'utils/useAxios';
 
-import { GodContainer, Container, Content } from './style';
+import { GodContainer, Container, Content } from '../components/styleDash';
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
@@ -16,7 +15,8 @@ export default function DashBoard() {
   const [pokemons, setPokemons] = useState([]);
   const [isWaiting, setIsWating] = useState(false);
   const [axiosGet] = useAxios('get');
-
+  const [axiosPost] = useAxios('post');
+  const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [cardsPerPage] = useState(6);
 
@@ -24,6 +24,17 @@ export default function DashBoard() {
   const [search, setSearch] = useState('');
   const [displayPokemons, setDisplay] = useState([]);
   const [finalPokemons, setFinal] = useState([]);
+  const [message, setMessage] = useState('');
+
+
+  const onCreateAll = async () => {
+    await axiosPost({
+      url: `/pokemon/createAll`
+    });
+    setMessage('Recarregue a página que a pokedex foi criada');
+    setLoading(true);
+
+  };
 
   const handleSearchChange = (value) => {
     setSearch(value);
@@ -63,18 +74,11 @@ export default function DashBoard() {
   }, []);
   console.log(displayPokemons);
 
-  // console.log(displayPokemons);
-  // const arrayPokemons = Object.values(displayPokemons);
-  // const finalArrayPokemons = arrayPokemons[0];
-  // console.log(finalArrayPokemons);
 
-  // Get current posts
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
   const currentCards = displayPokemons.slice(indexOfFirstCard, indexOfLastCard);
-  // console.log(currentCards);
 
-  // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
@@ -82,12 +86,24 @@ export default function DashBoard() {
       <NavBar search={search} handleSearch={handleSearchChange} />
       <Container>
         <Content>
+          <Toast
+            type='success'
+            setOpen={setMessage}
+          >
+            {message}
+          </Toast>
           <PaginationButtons
-            m={4}
             cardsPerPage={cardsPerPage}
             totalCards={displayPokemons.length}
             paginate={paginate}
           />
+          {loading && <RedButton
+            style={{ marginTop: '50px', marginBottom: '40px' }}
+            onClick={onCreateAll}
+
+          >
+            Criar todos os pokemão
+          </RedButton>}
           <CardGrid pokemons={currentCards} />
         </Content>
       </Container>
