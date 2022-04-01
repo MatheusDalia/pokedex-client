@@ -11,6 +11,7 @@
     }
   },
   "extends": [
+    "next",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
@@ -26,6 +27,8 @@
     "sourceType": "module"
   },
   "plugins": [
+    "next",
+    "next-js",
     "react",
     "react-hooks",
     "@typescript-eslint"
