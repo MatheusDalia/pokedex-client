@@ -1,7 +1,6 @@
 import { CustomText } from '../styles/globalComponents';
 import { Input, Toast } from 'components';
 import NavBar from 'components/NavBar';
-import { Logo, Google, GitHub } from '../assets';
 import Card from 'components/Card';
 import CardGrid from 'components/CardGrid';
 import PaginationButtons from 'components/Pagination';
