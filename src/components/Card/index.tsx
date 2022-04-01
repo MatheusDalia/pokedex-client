@@ -7,21 +7,14 @@ import Typography from '@mui/material/Typography';
 import { ChipFinal } from 'components/ChipStyle';
 import { InfoButton, DeleteButton } from 'components/Button';
 import Stack from '@mui/material/Stack';
-import theme from '../../styles/theme';
 import { Center } from './style';
 import { useAxios } from 'utils/useAxios';
-import api from '../../services/api';
 import { useState, useEffect } from 'react';
 import { Toast } from 'components';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import { FormInputs } from './style';
 import { Input } from 'components';
-import FormControl from '@mui/material/FormControl';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import { Checkbox } from '@mui/material';
 
 const style = {
   position: 'absolute' as const,
