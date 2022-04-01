@@ -6,7 +6,7 @@ import CardGrid from 'components/CardGrid';
 import PaginationButtons from 'components/Pagination';
 import { useAxios } from 'utils/useAxios';
 
-import { GodContainer, Container, Content } from './style';
+import { GodContainer, Container, Content } from '../components/styleDash';
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';

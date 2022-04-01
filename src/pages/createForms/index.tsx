@@ -11,7 +11,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import { Checkbox } from '@mui/material';
 
-import { GodContainer, Container, Content, FormInputs } from './style';
+import { GodContainer, Container, Content, FormInputs } from '../../components/styleForm';
 import Image from 'next/image';
 
 import { useState } from 'react';
