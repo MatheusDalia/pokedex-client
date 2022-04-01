@@ -83,7 +83,6 @@ export default function DashBoard() {
       <Container>
         <Content>
           <PaginationButtons
-            m={4}
             cardsPerPage={cardsPerPage}
             totalCards={displayPokemons.length}
             paginate={paginate}
