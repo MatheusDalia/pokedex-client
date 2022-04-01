@@ -32,8 +32,6 @@ export default function DashBoard() {
       url: `/pokemon/createAll`
     });
     setMessage('Recarregue a página que a pokedex foi criada');
-    setLoading(true);
-
   };
 
   const handleSearchChange = (value) => {
@@ -62,6 +60,10 @@ export default function DashBoard() {
         url: '/pokemon'
       });
       setPokemons(response.data.data.pokemons);
+
+      if (pokemons != []) {
+        setLoading(true);
+      }
       setDisplay(response.data.data.pokemons);
       setIsWating(false);
     } catch (error) {
@@ -97,12 +99,12 @@ export default function DashBoard() {
             totalCards={displayPokemons.length}
             paginate={paginate}
           />
-          {loading && <RedButton
+          {!loading && <RedButton
             style={{ marginTop: '50px', marginBottom: '40px' }}
             onClick={onCreateAll}
 
           >
-            Criar todos os pokemão
+            Criar todos!!
           </RedButton>}
           <CardGrid pokemons={currentCards} />
         </Content>
