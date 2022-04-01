@@ -62,18 +62,11 @@ export default function DashBoard() {
   }, []);
   console.log(displayPokemons);
 
-  // console.log(displayPokemons);
-  // const arrayPokemons = Object.values(displayPokemons);
-  // const finalArrayPokemons = arrayPokemons[0];
-  // console.log(finalArrayPokemons);
 
-  // Get current posts
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
   const currentCards = displayPokemons.slice(indexOfFirstCard, indexOfLastCard);
-  // console.log(currentCards);
 
-  // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
