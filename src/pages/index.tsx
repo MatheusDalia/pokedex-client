@@ -1,5 +1,5 @@
 import { CustomText } from '../styles/globalComponents';
-import { Input, Toast } from 'components';
+import { RedButton, Input, Toast } from 'components';
 import NavBar from 'components/NavBar';
 import Card from 'components/Card';
 import CardGrid from 'components/CardGrid';
@@ -15,7 +15,8 @@ export default function DashBoard() {
   const [pokemons, setPokemons] = useState([]);
   const [isWaiting, setIsWating] = useState(false);
   const [axiosGet] = useAxios('get');
-
+  const [axiosPost] = useAxios('post');
+  const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [cardsPerPage] = useState(6);
 
@@ -23,6 +24,17 @@ export default function DashBoard() {
   const [search, setSearch] = useState('');
   const [displayPokemons, setDisplay] = useState([]);
   const [finalPokemons, setFinal] = useState([]);
+  const [message, setMessage] = useState('');
+
+
+  const onCreateAll = async () => {
+    await axiosPost({
+      url: `/pokemon/createAll`
+    });
+    setMessage('Recarregue a página que a pokedex foi criada');
+    setLoading(true);
+
+  };
 
   const handleSearchChange = (value) => {
     setSearch(value);
@@ -74,11 +86,24 @@ export default function DashBoard() {
       <NavBar search={search} handleSearch={handleSearchChange} />
       <Container>
         <Content>
+          <Toast
+            type='success'
+            setOpen={setMessage}
+          >
+            {message}
+          </Toast>
           <PaginationButtons
             cardsPerPage={cardsPerPage}
             totalCards={displayPokemons.length}
             paginate={paginate}
           />
+          {loading && <RedButton
+            style={{ marginTop: '50px', marginBottom: '40px' }}
+            onClick={onCreateAll}
+
+          >
+            Criar todos os pokemão
+          </RedButton>}
           <CardGrid pokemons={currentCards} />
         </Content>
       </Container>
