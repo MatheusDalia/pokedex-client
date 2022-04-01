@@ -19,7 +19,7 @@ import { useRouter } from 'next/router';
 import { useAxios } from 'utils/useAxios';
 import { AxiosError, AxiosResponse } from 'axios';
 
-export default function Login() {
+export default function CreateForms() {
   const [name, setName] = useState('');
   const [type1, setType1] = useState('');
   const [type2, setType2] = useState('""');
