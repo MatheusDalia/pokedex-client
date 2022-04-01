@@ -27,8 +27,6 @@
     "sourceType": "module"
   },
   "plugins": [
-    "next",
-    "next-js",
     "react",
     "react-hooks",
     "@typescript-eslint"
