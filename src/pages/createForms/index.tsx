@@ -289,7 +289,9 @@ export default function Login() {
                 }}
               />
               <Input
-                onChange={(event) => setPokemonNumber(event.target.value)}
+                onChange={(event) =>
+                  setPokemonNumber(Number(event.target.value))
+                }
                 required
                 id="outlined-number"
                 label="Pokemon N°"
