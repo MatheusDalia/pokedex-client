@@ -9,7 +9,7 @@ import { InfoButton, DeleteButton } from 'components/Button';
 import Stack from '@mui/material/Stack';
 import { Center } from './style';
 import { useAxios } from 'utils/useAxios';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Toast } from 'components';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
